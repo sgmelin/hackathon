@@ -6,11 +6,11 @@ $db_name="hackathon"; // Database name
 $tbl_name="weather"; // Table name 
 
 // Connect to server and select database.
-mysql_connect("$host", "$username", "$password")or die("cannot connect server "); 
-mysql_select_db("$db_name")or die("cannot select DB");
+mysqli_connect("$host", "$username", "$password")or die("cannot connect server "); 
+mysqli_select_db("$db_name")or die("cannot select DB");
 $sql="SELECT * FROM $tbl_name";
-$result=mysql_query($sql);
-while($rows=mysql_fetch_array($result)){
+$result=mysqli_query($sql);
+while($rows=mysqli_fetch_array($result)){
 ?>
 <table width="400" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
 <tr>
@@ -40,5 +40,5 @@ while($rows=mysql_fetch_array($result)){
 </table>
 <?php
 }
-mysql_close(); //close database
+mysqli_close(); //close database
 ?>
